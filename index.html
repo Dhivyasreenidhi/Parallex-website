@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      background: #fff9f9;
+      color: rgb(34, 33, 33);
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+      padding: 0.5em 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: rgb(255, 243, 243);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      background: #f0e4e4;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 249, 249);
+      font-size: 2em;
+      position: relative;
+    }
+
+    .overlay {
+      background: rgba(117, 115, 115, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #section1 { background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZqlN96mrdj_cfe8C9o0Jf7ZQTRHP61f9SjWmpMSln5B9qzeBvHtB_nMQUCArOppw75bg&usqp=CAU') center/cover fixed; }
+    #section2 { background: url('https://www.allthingsdogs.com/wp-content/uploads/2020/01/White-Pomeranian-Feature.jpg') center/cover fixed; }
+    #section3 { background: url('https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg') center/cover fixed; }
+    #section4 { background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScS-ga2xB0rjJN1MHrByHN-7xQzmQHEfcpTA&usqp=CAU') center/cover fixed; }
+
+    /* Add more sections as needed */
+
+    .content {
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+  <title>Parallax Website</title>
+</head>
+<body>
+  <header>
+    <h1>Parallax Website</h1>
+  </header>
+  <nav>
+    <a href="#section1">Puppies</a>
+    <a href="#section2">Pomerian</a>
+    <a href="#section3">German sheperd</a>
+    <a href="#section4">Siberian husky</a>
+  </nav>
+  <div class="section" id="section1">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Cute Puppies</h2>
+      <p>Explore the adorable world of puppies with our collection of heartwarming images and stories. Witness their playful antics and irresistible charm that will melt your heart.</p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>POMERIAN</p>
+      <p>
+        Pomeranians are small, intelligent dogs with fluffy double coats and lively personalities. They're confident and curious but require regular exercise and grooming. With a lifespan of 12-16 years, they're popular pets known for their alertness and charming appearance, making them great companions for attentive owners and families.</p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>GERMAN SHEPERD</p>
+      <p>Big bags for big fans.
+        The German Shepherd is a versatile and intelligent breed, known for its loyalty and protective nature. These medium to large-sized dogs have a distinctive appearance, excel in various roles like police and service work, and require regular exercise. They have a lifespan of 9-13 years and are popular worldwide for their versatility and loyalty.        </p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>HUSKY</p>
+      <p>
+        Siberian Huskies are medium-sized dogs known for their striking appearance, including striking blue eyes and a thick double coat. They are social, energetic, and independent, requiring ample exercise and mental stimulation. Originating from Siberia, they have a lifespan of 12-15 years and are popular pets, but they need committed owners to meet their active needs.</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
